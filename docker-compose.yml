@@ -7,7 +7,7 @@ services:
     depends_on:
       - db
     environment:
-      - DATABASE_URL=postgresql://mina:0000@192.168.211.128:5432/mydb
+      - DATABASE_URI=postgresql://mina:0000@192.168.211.128:5432/mydb
 
   db:
     image: postgres:13
