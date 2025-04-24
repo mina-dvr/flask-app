@@ -2,10 +2,15 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import os
 
-app = Flask(_name_)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
 db = SQLAlchemy(app)
 
 @app.route('/')
 def home():
-    return "Hello from Flask with Database!"
+    return 'Hello from Flask with Database!'
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
