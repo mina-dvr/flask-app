@@ -10,7 +10,7 @@ db = SQLAlchemy(app)
 
 @app.route('/')
 def home():
-    return 'Hello from Flask with Database!'
+    return 'Hello from Flask with Database mrdk!'
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
